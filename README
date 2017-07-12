@@ -1,0 +1,86 @@
+This is the README for Sced, a constraint based scene editor, or authoring
+tool if you're into VRML.
+
+Sced is a program for creating 3d scenes, then exporting them to a wide
+variety of rendering programs. Programs supported are:
+ POVray, Rayshade, any VRML browser, anything that reads Pixar's RIB
+ format, and Radiance. Plus a couple of local formats, for me.
+
+Sced uses constraints to allow for the accurate placement of
+objects, and provides a maintenance system for keeping this
+constraints satisfied as the scene is modified.
+
+Getting it:
+Sced is available from:
+  http://http.cs.berkeley.edu/~schenney/sced/sced.html
+The first page is also the sced home page.
+When getting sced-1.03 the first time, get sced-1.03.tar.gz. As bugs
+are fixed, you will probably only need to get the source distribution.
+
+Upgrading from an old version:
+Get everything. It's all changed. You may even need to reread some parts
+of the guide. If support for previous versions is compiled in, you will
+be able to load old scene files from any version. When these files are
+saved, they are saved in the new version format, so old versions can't
+read them. I see absolutely no reason why you would want to do that,
+and it's technically impossible anyway. ;-)
+
+Compiling it:
+Gunzip and untar the distribution. Try:
+  zcat sced-1.03.tar.gz | tar -xvf -
+or
+  tar -xzvf sced-1.03.tar.gz
+
+Run ./configure in the sced-1.03 directory that is created. Answer the
+questions asked (most are answered for you). A "path" should be a
+full pathname, starting at /. "Options" is a list of options you want
+passed to a renderer when previewing (only when previewing). So
+an example for POV is:
+  POVray path []? /usr/local/bin/x-povray
+  POVray options []? -l/usr/local/lib/povray +d3 +ftga
+Answer y or n to the yes/no questions.
+
+The default installation directory root is /usr/local (so the executable goes
+in /usr/local/bin). If you don't like this, then run:
+  configure --prefix=/your/install/dir
+
+Run "make depend".
+
+Run "make".
+
+Run "make install". This puts the executable in /usr/local/bin (or whereever
+you specified with --prefix to configure) and the man page in
+/usr/local/man/man1.
+
+With a bit of luck it will all work. If it doesn't the first place to
+look is in the Makefile AFTER running configure. If there's anything
+there that looks strange, try fixing it. If you can't figure out what's
+wrong, mail me and ask. If you can figure out what's wrong, mail me
+and tell me.
+
+Common problem:
+Configure does not do a good job of detecting lex/flex libraries.
+If you get an error message regarding "yywrap", you should try
+changing the line in the Makefile (after running configure) that says:
+ LEXLIB=
+to say
+ LEXLIB=-lfl
+or
+ LEXLIB=-ll
+whichever works.
+
+Setting Up:
+A sample defaults file is in sced-1.0/scenerc.  Edit this to suit your
+needs and copy it to $HOME/.scenerc. If you want to set the X resources
+then do that via your normal method. Details on the defaults file and
+Xresources are in the user guide, provided as docs/guide.dvi. Run dvips
+to turn it into postscript for printing or viewing.
+
+Running it:
+That's the easy part. Just type sced.
+Try loading some of the scenes provided.
+
+You should read the COPYRIGHT thing to, at least the first few lines.
+
+http://http.cs.berkeley.edu/~schenney
+schenney@acm.org

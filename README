@@ -10,21 +10,6 @@ Sced uses constraints to allow for the accurate placement of
 objects, and provides a maintenance system for keeping this
 constraints satisfied as the scene is modified.
 
-Getting it:
-Sced is available from:
-  http://http.cs.berkeley.edu/~schenney/sced/sced.html
-The first page is also the sced home page.
-When getting sced-1.03 the first time, get sced-1.03.tar.gz. As bugs
-are fixed, you will probably only need to get the source distribution.
-
-Upgrading from an old version:
-Get everything. It's all changed. You may even need to reread some parts
-of the guide. If support for previous versions is compiled in, you will
-be able to load old scene files from any version. When these files are
-saved, they are saved in the new version format, so old versions can't
-read them. I see absolutely no reason why you would want to do that,
-and it's technically impossible anyway. ;-)
-
 Compiling it:
 Gunzip and untar the distribution. Try:
   zcat sced-1.03.tar.gz | tar -xvf -
@@ -79,8 +64,3 @@ to turn it into postscript for printing or viewing.
 Running it:
 That's the easy part. Just type sced.
 Try loading some of the scenes provided.
-
-You should read the COPYRIGHT thing to, at least the first few lines.
-
-http://http.cs.berkeley.edu/~schenney
-schenney@acm.org

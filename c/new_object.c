@@ -40,10 +40,6 @@
 #include <csg.h>
 #include <aggregate.h>
 #include <instance_list.h>
-#include <X11/Shell.h>
-#include <X11/Xaw/Command.h>
-#include <X11/Xaw/Form.h>
-#include <X11/Xaw/Label.h>
 #include <SimpleWire.h>
 
 

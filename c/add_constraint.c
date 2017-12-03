@@ -35,9 +35,7 @@
 #include <add_constraint.h>
 #include <select_point.h>
 #include <ConstraintBox.h>
-#include <X11/Xaw/AsciiText.h>
 #include <ConstraintPt.h>
-#include <X11/Xaw/Toggle.h>
 
 
 static int  Add_Plane_Constraint_Callback(ConstraintSpecPtr);

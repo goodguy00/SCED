@@ -42,12 +42,6 @@
 #elif HAVE_STRINGS_H
 #include <strings.h>
 #endif
-#include <X11/Shell.h>
-#include <X11/Xaw/AsciiText.h>
-#include <X11/Xaw/Command.h>
-#include <X11/Xaw/Form.h>
-#include <X11/Xaw/Label.h>
-#include <X11/Xaw/Toggle.h>
 
 #define LOW 1
 #define MEDIUM 2

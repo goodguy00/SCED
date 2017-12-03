@@ -38,17 +38,12 @@
 #include <aggregate.h>
 #include <layers.h>
 #include <X11/cursorfont.h>
-#include <X11/Shell.h>
-#include <X11/Xaw/Command.h>
-#include <X11/Xaw/Form.h>
-#include <X11/Xaw/Label.h>
 #include <X11/Xaw/MenuButton.h>
 #include <X11/Xaw/SmeBSB.h>
 #include <X11/Xaw/SmeLine.h>
-#include <X11/Xaw/SimpleMenu.h>
-#include <X11/Xaw/AsciiText.h>
 #include <X11/Xaw/Viewport.h>
 #include <View.h>
+
 
 /* The translation table for object selection.  Defined in events.c. */
 extern String selection_string;

@@ -36,6 +36,9 @@
 #ifndef __VECTOR__
 #define __VECTOR__
 
+#include <math.h>
+
+
 /* Define a vector.  */
 typedef struct _Vector
     {

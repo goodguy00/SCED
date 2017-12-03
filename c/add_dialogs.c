@@ -33,14 +33,7 @@
 #include <sced.h>
 #include <add_constraint.h>
 #include <ConstraintPt.h>
-#include <X11/Shell.h>
-#include <X11/Xaw/AsciiText.h>
-#include <X11/Xaw/Command.h>
-#include <X11/Xaw/Form.h>
-#include <X11/Xaw/Label.h>
-#include <X11/Xaw/SimpleMenu.h>
 #include <X11/Xaw/SmeBSB.h>
-#include <X11/Xaw/Toggle.h>
 
 extern Pixmap   menu_bitmap;
 

@@ -37,9 +37,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <X11/Intrinsic.h>
+#include <X11/IntrinsicP.h>
 #include <X11/StringDefs.h>
+#include <X11/Xlib.h>
 #include <X11/Xmu/Converters.h>
+#include <X11/Shell.h>
+
+#include <X11/Xaw/AsciiText.h>
+#include <X11/Xaw/Command.h>
+#include <X11/Xaw/Form.h>
+#include <X11/Xaw/Label.h>
+#include <X11/Xaw/Text.h>
+#include <X11/Xaw/Toggle.h>
+#include <X11/Xaw/SimpleMenu.h>
 
 #include <Vector.h>
 

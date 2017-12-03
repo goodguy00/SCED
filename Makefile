@@ -44,7 +44,7 @@ RANLIB=ranlib
 # Put the location of you X header files here, if necessary.
 # eg:
 # XINCLUDE=-I/usr/openwin/include
-XINCLUDE= -I/usr/X11R6/include
+XINCLUDE= -I/usr/include/X11
 
 #
 # Define where to find ELK
@@ -67,7 +67,7 @@ LIBS=-lXaw -lXmu -lXext -lXt  -lSM -lICE -lX11  $(LEXLIB) $(ELKLIBS) -lm
 # Put the location of your X library files here, if necessary.
 # eg:
 # XLIBDIR=-L/usr/openwin/lib
-XLIBDIR= -L/usr/X11R6/lib64
+XLIBDIR= -L/usr/lib64
 
 LDFLAGS=$(OPTIMISE) $(XLIBDIR) 
 

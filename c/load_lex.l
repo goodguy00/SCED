@@ -61,6 +61,7 @@ NEWLINE     "\n"
                     };
 "MainViewport"      return MAINVIEW_TOKEN;
 "CSGViewport"       return CSGVIEW_TOKEN;
+"AggViewport"       return AGGVIEW_TOKEN;
 "Viewport"          return VIEWPORT_TOKEN;
 "LookFrom"          return LOOKFROM_TOKEN;
 "LookAt"            return LOOKAT_TOKEN;
@@ -131,6 +132,11 @@ NEWLINE     "\n"
 "Normal"            return NORMAL_TOKEN;
 "Internal"          return INTERNAL_TOKEN;
 "Object"            return OBJECT_TOKEN;
+"Transformation"    return TRANSFORM_TOKEN;
+"Features"          return FEATURES_TOKEN;
+"Alias"             return ALIAS_TOKEN;
+"LOD"               return LOD_TOKEN;
+"Aggregate"         return AGG_TOKEN;
 "\n"                line_num++;
 {IDENTIFIER}        {
                         lex_string = yytext;

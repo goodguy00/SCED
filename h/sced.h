@@ -57,6 +57,7 @@
 #include <defs.h>
 #include <enum.h>
 #include <types.h>
+#include <inttypes.h>
 #include <globals.h>
 #include <protos.h>
 #include <macros.h>

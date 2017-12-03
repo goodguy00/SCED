@@ -76,8 +76,8 @@ static int
 Wireframe_KD_Compare_Func(void *existing, void *insert, void *data, int depth)
 {
     Vector  *verts = (Vector*)data;
-    int     ex_index = (int)existing;
-    int     new_index = (int)insert;
+    intptr_t     ex_index = (intptr_t)existing;
+    intptr_t     new_index = (intptr_t)insert;
     int     comp_field = depth % 3;
     Vector  diff;
 
@@ -183,7 +183,7 @@ Wireframe_Append(WireframePtr dest, WireframePtr src, ObjectInstancePtr obj,
     KDTree  norm_tree = NULL;
     Vector  dest_vert, dest_norm;
     int	    *vert_map, *norm_map;
-    int	    existing;
+    long int	    existing;
     Vector  temp_v1, temp_v2;
     double  temp_d;
     int     i, j, k;
@@ -196,10 +196,10 @@ Wireframe_Append(WireframePtr dest, WireframePtr src, ObjectInstancePtr obj,
     norm_map = New(int, src->num_normals);
 
     for ( i = 0 ; i < dest->num_vertices ; i++ )
-	KD_Add_Elmt(&vert_tree, (void*)i, (void*)dest->vertices,
+    	KD_Add_Elmt(&vert_tree, (void*)(intptr_t)i, (void*)dest->vertices,
 		    Wireframe_KD_Compare_Func);
     for ( i = 0 ; i < dest->num_normals ; i++ )
-	KD_Add_Elmt(&norm_tree, (void*)i, (void*)dest->normals,
+    	KD_Add_Elmt(&norm_tree, (void*)(intptr_t)i, (void*)dest->normals,
 		    Wireframe_KD_Compare_Func);
 
     if ( Obj_Is_Control(obj) )
@@ -222,7 +222,7 @@ Wireframe_Append(WireframePtr dest, WireframePtr src, ObjectInstancePtr obj,
     {
         Ref_Transform_Vector(obj, dest->vertices[j], dest_vert);
 	dest->vertices[dest->num_real_verts] = dest_vert;
-	existing = (int)KD_Add_Elmt(&vert_tree, (void*)dest->num_real_verts,
+	existing = (intptr_t)KD_Add_Elmt(&vert_tree, (void*)(intptr_t)dest->num_real_verts,
 				    (void*)dest->vertices,
 				    Wireframe_KD_Compare_Func);
 	vert_map[i] = existing;
@@ -236,8 +236,7 @@ Wireframe_Append(WireframePtr dest, WireframePtr src, ObjectInstancePtr obj,
     {
         Ref_Transform_Normal(obj, dest->normals[j], dest_norm);
 	dest->normals[dest->num_normals] = dest_norm;
-	existing = (int)KD_Add_Elmt(&norm_tree, (void*)dest->num_normals,
-				    (void*)dest->normals,
+	existing = (intptr_t)KD_Add_Elmt(&norm_tree, (void*)(intptr_t)dest->num_normals, (void*)dest->normals,
 				    Wireframe_KD_Compare_Func);
 	norm_map[i] = existing;
 	if ( existing == dest->num_normals )
@@ -1623,7 +1622,7 @@ Wireframe_Assign_Vertex_Normals(WireframePtr wire, float crease_angle)
                 wire->normals = More(wire->normals, Vector, max_num_norms);
             }
             wire->normals[wire->num_normals] = face_norms[j];
-            existing = (int)KD_Add_Elmt(&normals, (void*)wire->num_normals,
+            existing = (intptr_t)KD_Add_Elmt(&normals, (void*)(intptr_t)wire->num_normals,
                                         (void*)wire->normals,
                                         Wireframe_KD_Compare_Func);
             if ( existing == wire->num_normals )

@@ -366,7 +366,7 @@ void
 Create_New_Object(Widget w, XtPointer client_data, XtPointer call_data)
 {
     BaseObjectPtr   base_obj;
-    int             count = (int)call_data;
+    intptr_t        count = (intptr_t)call_data;
     int             i;
 
     XtPopdown(new_object_shell);

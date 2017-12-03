@@ -91,7 +91,7 @@ extern Viewport *view_list;
 extern String   *label_list;
 extern int      num_views;
 
-static int  on_completion;
+static intptr_t  on_completion;
 
 static XtIntervalId autosave_id = -1;
 
@@ -136,7 +136,7 @@ Save_Dialog_Func(Widget w, XtPointer cl_data, XtPointer ca_data)
 
     save_in_progress = TRUE;
 
-    on_completion = (int)cl_data;
+    on_completion = (intptr_t)cl_data;
 
     if ( on_completion != SAVE_NONAME || ! io_file_name )
     {

@@ -1,17 +1,16 @@
 # "STARTING TUTORIAL - The Basics."
-.P
+
 This tutorial runs through the basic editing functions and constraint
 management on a click by click basis. The aim is to make you a bit
 familiar with the interface.
-.P
-It should take 0.5 - 1 hour (very rough estimate).
-.AL
 
-Start up the program (the easy bit!). You should see a column of
+### It should take 0.5 - 1 hour (very rough estimate).
+
+* Start up the program (the easy bit!). You should see a column of
 buttons down the left, a big window with a set of axes in the middle and
 a couple of things down the bottom.
 
-Create a Cube. Click on the New Object button and a dialog will appear
+* Create a Cube. Click on the New Object button and a dialog will appear
 with lots of pretty pictures in it. From left to right, top then bottom
 they are: Cube, Sphere, Cylinder, Cone, Square, Plane. The cancel button
 is at the bottom - choosing it will pop down the dialog without doing
@@ -215,21 +214,20 @@ will appear. Change what you like then hit Done. Default will set them to
 the default as defined in the .scenerc file. RGB values are between 0 and 1.
 Diffuse acts on top of the base color, as do all the rest.
 
-Save the scene. Choose Save off the File menu. A big dialog will appear,
+* Save the scene. Choose Save off the File menu. A big dialog will appear,
 with the default directory and extension at the top (.scenerc again).
 replace the star with a name, say starting.scn, then hit return or choose
 Save.
 
-Finally, Export it. Choose Export from the File menu and enter a filename
+* Finally, Export it. Choose Export from the File menu and enter a filename
 as before. The default extension will reflect what the Target raytracer is.
 Change the target to export to a different renderer.
 
-Really finally, choose Quit from the File menu.
-.LE
-.P
+* Really finally, choose Quit from the File menu.
+
 The file you exported should be suitable for input into the raytracer you
 chose as a target. Try it and tell me if you have problems. NOTE POVray has
 some patches which MUST be applied.
-.P
+
 Tutorial Blocks World deals with constraints in far more detail, and
 advanced use of the Scaling Point, Object Origin and Object Axes.

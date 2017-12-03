@@ -1,5 +1,7 @@
-#Sced, a constraint based scene editor
-###Version 1.03
+Sced, a constraint based scene editor
+=====================================
+Version 1.03
+------------
 
 Sced is a program for creating 3d scenes, then exporting them to a wide variety of rendering programs. Programs supported are:
 * POVray, Rayshade, any VRML browser, anything that reads Pixar's RIB

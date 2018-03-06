@@ -41,13 +41,6 @@
 #include <math.h>
 #include <sced.h>
 #include <aggregate.h>
-#include <X11/Shell.h>
-#include <X11/Xaw/Command.h>
-#include <X11/Xaw/Form.h>
-#include <X11/Xaw/Label.h>
-#include <X11/Xaw/Text.h>
-#include <X11/Xaw/AsciiText.h>
-#include <X11/Xaw/Toggle.h>
 
 static void Update_Attribute_Strings(AttributePtr);
 
@@ -363,6 +356,7 @@ Create_Attributes_Dialog()
     XtSetArg(args[n], XtNstring, red_text);         n++;
     XtSetArg(args[n], XtNfromVert, top_label);      n++;
     XtSetArg(args[n], XtNfromHoriz, rgb_labels[rgb_count]); n++;
+/*    XtSetArg(args[n], XtNvalue, "");                n++; */
     rgb_text[rgb_count] = XtCreateManagedWidget("redText",
                     asciiTextWidgetClass, attributes_form, args, n);
     XtOverrideTranslations(rgb_text[rgb_count],

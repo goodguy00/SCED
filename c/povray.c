@@ -261,7 +261,7 @@ Export_Transform(FILE *outfile, ObjectInstancePtr inst, TransformPtr add)
     fprintf(outfile, "\t"); POVVPrint(transp.z);
     fprintf(outfile, "\ttranslate ");
     POVVPrint(inst->o_transform.displacement);
-    fprintf(outfile, "\t}\n");
+    fprintf(outfile, "\t};\n");
 
 }
 
@@ -371,7 +371,7 @@ Export_Basetypes(FILE *outfile, BaseObjectPtr base_obj)
 
     Hash_Insert(base_hash, (unsigned long)base_obj, (void*)base_obj);
 
-    return fprintf(outfile, "\n");
+    return fprintf(outfile, ";\n");
 }
 
 
@@ -730,11 +730,11 @@ Export_Declarations(FILE *outfile, ColorVector amb)
 
     /* Export ambient identifier. */
     ambient = ( amb.red + amb.green + amb.blue ) / 3.0;
-    fprintf(outfile, "#declare ambient_light_level = %g\n", ambient);
+    fprintf(outfile, "#declare ambient_light_level = %g;\n", ambient);
 
     /* This is simple at this stage. Just dump the string. */
     if ( declarations[POVray] )
-        fprintf(outfile, "\n%s\n\n", declarations[POVray]);
+        fprintf(outfile, "\n%s\n", declarations[POVray]);
 
     return fprintf(outfile, "\n");
 }

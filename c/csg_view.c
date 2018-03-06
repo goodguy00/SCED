@@ -388,9 +388,7 @@ Create_CSG_Buttons(int gap)
     XtSetArg(args[n], XtNlabel, "CSG");         n++;
     XtSetArg(args[n], XtNfromVert, NULL);       n++;
     XtSetArg(args[n], XtNmenuName, "CSGMenu");  n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);      n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("csgButton",
                 menuButtonWidgetClass, csg_window_form_widget, args, n);
     option_count++;
@@ -401,9 +399,7 @@ Create_CSG_Buttons(int gap)
     XtSetArg(args[n], XtNlabel, "Object");                          n++;
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNmenuName, "ObjectMenu");                   n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("objectButton",
                 menuButtonWidgetClass, csg_window_form_widget, args, n);
     option_count++;
@@ -414,9 +410,7 @@ Create_CSG_Buttons(int gap)
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNmenuName, "ViewMenu");                     n++;
     XtSetArg(args[n], XtNvertDistance, 5*gap);                      n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("viewButton",
                     menuButtonWidgetClass, csg_window_form_widget, args, n);
     option_count++;
@@ -426,9 +420,7 @@ Create_CSG_Buttons(int gap)
     XtSetArg(args[n], XtNlabel, "Window");                          n++;
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNmenuName, "WindowMenu");                   n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("windowButton",
                     menuButtonWidgetClass, csg_window_form_widget, args, n);
     option_count++;
@@ -438,9 +430,7 @@ Create_CSG_Buttons(int gap)
     XtSetArg(args[n], XtNlabel, "Layers");                          n++;
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNmenuName, "LayerMenu");                    n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("layerButton",
                     menuButtonWidgetClass, csg_window_form_widget, args, n);
     option_count++;
@@ -463,9 +453,7 @@ Create_CSG_Buttons(int gap)
     XtSetArg(args[n], XtNmenuName, "EditMenu");                     n++;
     XtSetArg(args[n], XtNvertDistance, 5*gap);                      n++;
     XtSetArg(args[n], XtNsensitive, FALSE);                         n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     csg_window.edit_menu->button = option_buttons[option_count] =
         XtCreateManagedWidget("editButton",
                 menuButtonWidgetClass, csg_window_form_widget, args, n);

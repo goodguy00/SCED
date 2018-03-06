@@ -303,9 +303,7 @@ Create_Agg_Buttons(int gap)
     XtSetArg(args[n], XtNlabel, "Aggregate");   n++;
     XtSetArg(args[n], XtNfromVert, NULL);       n++;
     XtSetArg(args[n], XtNmenuName, "AggMenu");  n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);      n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("aggButton",
                 menuButtonWidgetClass, agg_window_form_widget, args, n);
     option_count++;
@@ -327,9 +325,7 @@ Create_Agg_Buttons(int gap)
     XtSetArg(args[n], XtNlabel, "Object");                          n++;
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNmenuName, "ObjectMenu");                   n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("objectButton",
                 menuButtonWidgetClass, agg_window_form_widget, args, n);
     option_count++;
@@ -340,9 +336,7 @@ Create_Agg_Buttons(int gap)
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNvertDistance, 5*gap);                      n++;
     XtSetArg(args[n], XtNmenuName, "LightsMenu");                   n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("lightsButton",
                 menuButtonWidgetClass, agg_window_form_widget, args, n);
     option_count++;
@@ -353,9 +347,7 @@ Create_Agg_Buttons(int gap)
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNmenuName, "ViewMenu");                     n++;
     XtSetArg(args[n], XtNvertDistance, 5*gap);                      n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("viewButton",
                     menuButtonWidgetClass, agg_window_form_widget, args, n);
     option_count++;
@@ -365,9 +357,7 @@ Create_Agg_Buttons(int gap)
     XtSetArg(args[n], XtNlabel, "Window");                          n++;
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNmenuName, "WindowMenu");                   n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("windowButton",
                     menuButtonWidgetClass, agg_window_form_widget, args, n);
     option_count++;
@@ -377,9 +367,7 @@ Create_Agg_Buttons(int gap)
     XtSetArg(args[n], XtNlabel, "Layers");                          n++;
     XtSetArg(args[n], XtNfromVert, option_buttons[option_count-1]); n++;
     XtSetArg(args[n], XtNmenuName, "LayerMenu");                    n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     option_buttons[option_count] = XtCreateManagedWidget("layerButton",
                     menuButtonWidgetClass, agg_window_form_widget, args, n);
     option_count++;
@@ -402,9 +390,7 @@ Create_Agg_Buttons(int gap)
     XtSetArg(args[n], XtNmenuName, "EditMenu");                     n++;
     XtSetArg(args[n], XtNvertDistance, 5*gap);                      n++;
     XtSetArg(args[n], XtNsensitive, FALSE);                         n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);                  n++;
-#endif
     agg_window.edit_menu->button = option_buttons[option_count] =
         XtCreateManagedWidget("editButton",
                 menuButtonWidgetClass, agg_window_form_widget, args, n);

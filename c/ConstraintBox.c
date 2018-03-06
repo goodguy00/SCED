@@ -62,10 +62,8 @@ static XtResource   resources[] = {
       offset(h_space), XtRImmediate, (XtPointer)4 },
     { XtNvSpace, XtCVSpace, XtRInt, sizeof(int),
       offset(v_space), XtRImmediate, (XtPointer)4 },
-#if ( XtSpecificationRelease > 4 )
     { XtNleftBitmap, XtCBitmap, XtRBitmap, sizeof(Pixmap),
       offset(menu_bitmap), XtRPixmap, None },
-#endif
     { XtNnewCallback, XtCCallback, XtRCallback, sizeof(XtCallbackList),
       offset(new_callback), XtRCallback, NULL },
     { XtNnewIsMenu, XtCBoolean, XtRBoolean, sizeof(Boolean),
@@ -350,13 +348,11 @@ ConstraintBoxInitialise(Widget request, Widget new, ArgList orig_args,
     if ( box->constraint_box.title_is_menu )
     {
         XtSetArg(args[n], XtNmenuName, box->constraint_box.title_menu_name);n++;
-#if ( XtSpecificationRelease > 4 )
         if ( box->constraint_box.menu_bitmap )
         {
             XtSetArg(args[n], XtNleftBitmap, box->constraint_box.menu_bitmap);
             n++;
         }
-#endif
         title = XtCreateManagedWidget("title", menuButtonWidgetClass, new,
                                       args, n);
     }
@@ -378,13 +374,11 @@ ConstraintBoxInitialise(Widget request, Widget new, ArgList orig_args,
     if ( box->constraint_box.new_is_menu )
     {
         XtSetArg(args[n], XtNmenuName, box->constraint_box.new_menu_name);  n++;
-#if ( XtSpecificationRelease > 4 )
         if ( box->constraint_box.menu_bitmap )
         {
             XtSetArg(args[n], XtNleftBitmap, box->constraint_box.menu_bitmap);
             n++;
         }
-#endif
         new_w = XtCreateManagedWidget("new", menuButtonWidgetClass, new, args,
                                       n);
         XtOverrideTranslations(new_w, XtParseTranslationTable(new_menu_trans));
@@ -443,7 +437,6 @@ ConstraintBoxSetValues(Widget old, Widget request, Widget new, ArgList args,
 
 #define NotEqual(field) (old_box->field != new_box->field)
 
-#if ( XtSpecificationRelease > 4 )
     if ( NotEqual(constraint_box.menu_bitmap) )
     {
         if ( ! new_box->constraint_box.new_is_menu )
@@ -457,7 +450,6 @@ ConstraintBoxSetValues(Widget old, Widget request, Widget new, ArgList args,
                      new_box->constraint_box.menu_bitmap);  title_n++;
         }
     }
-#endif
 
     if ( NotEqual(constraint_box.new_is_menu) )
     {
@@ -476,10 +468,8 @@ ConstraintBoxSetValues(Widget old, Widget request, Widget new, ArgList args,
 
             XtSetArg(new_args[new_n], XtNmenuName,
                      new_box->constraint_box.new_menu_name);    new_n++;
-#if ( XtSpecificationRelease > 4 )
             XtSetArg(new_args[new_n], XtNleftBitmap,
                      new_box->constraint_box.menu_bitmap);      new_n++;
-#endif
             new_w = XtCreateManagedWidget("new", menuButtonWidgetClass,
                                 (Widget)new_box, new_args, new_n);
             XtOverrideTranslations(new_w,
@@ -538,10 +528,8 @@ ConstraintBoxSetValues(Widget old, Widget request, Widget new, ArgList args,
         {
             XtSetArg(title_args[title_n], XtNmenuName,
                      new_box->constraint_box.title_menu_name);  title_n++;
-#if ( XtSpecificationRelease > 4 )
             XtSetArg(title_args[title_n], XtNleftBitmap,
                      new_box->constraint_box.menu_bitmap);      title_n++;
-#endif
             XtCreateManagedWidget("title", menuButtonWidgetClass,
                                   (Widget)new_box, title_args, title_n);
         }

@@ -56,10 +56,8 @@ static XtResource   resources[] = {
       offset(h_space), XtRImmediate, (XtPointer)4 },
     { XtNlabel, XtCString, XtRString, sizeof(String),
       offset(label), XtRImmediate, (XtPointer)"0 0 0" },
-#if ( XtSpecificationRelease > 4 )
     { XtNleftBitmap, XtCBitmap, XtRBitmap, sizeof(Pixmap),
       offset(menu_bitmap), XtRPixmap, None },
-#endif
     { XtNextraCallback, XtCCallback, XtRCallback, sizeof(XtCallbackList),
       offset(extra_callback), XtRCallback, NULL },
     { XtNextraLabel, XtCString, XtRString, sizeof(String),
@@ -275,13 +273,11 @@ ConstraintPtInitialise(Widget request, Widget new, ArgList orig_args,
     if ( box->constraint_pt.title_is_menu )
     {
         XtSetArg(args[n], XtNmenuName, box->constraint_pt.title_menu_name);n++;
-#if ( XtSpecificationRelease > 4 )
         if ( box->constraint_pt.menu_bitmap )
         {
             XtSetArg(args[n], XtNleftBitmap, box->constraint_pt.menu_bitmap);
             n++;
         }
-#endif
         menu =
             XtCreateManagedWidget("title", menuButtonWidgetClass, new, args, n);
         XtAddCallback(menu, XtNcallback, ConstraintPtMenuCallback, NULL);
@@ -357,14 +353,12 @@ ConstraintPtSetValues(Widget old, Widget request, Widget new, ArgList args,
 
 #define NotEqual(field) (old_box->field != new_box->field)
 
-#if ( XtSpecificationRelease > 4 )
     if ( NotEqual(constraint_pt.menu_bitmap) &&
          ! new_box->constraint_pt.title_is_menu )
     {
         XtSetArg(title_args[title_n], XtNleftBitmap,
                  new_box->constraint_pt.menu_bitmap);   title_n++;
     }
-#endif
 
     if ( NotEqual(constraint_pt.label) )
     {

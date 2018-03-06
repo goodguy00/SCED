@@ -140,7 +140,7 @@ Create_Name_Dialog()
 
     /* Create the contents, with a suitable label. */
     n = 0;
-    XtSetArg(args[n], XtNlabel, "Object's name:");  n++;
+    XtSetArg(args[n], XtNlabel, "Object's Name:");  n++;
     XtSetArg(args[n], XtNvalue, "");                n++;
     name_dialog = XtCreateManagedWidget("nameDialog", dialogWidgetClass,
                                         name_dialog_shell, args, n);

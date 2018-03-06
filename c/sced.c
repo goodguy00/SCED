@@ -323,10 +323,8 @@ main(int argc, char *argv[], char *envp[])
                                 icon_bits, icon_width, icon_height);
     XtVaSetValues(main_window.shell, XtNiconPixmap, icon_bitmap, NULL);
 
-    XtAppAddConverter(app_context, XtRString, XtROrientation,
-                      XmuCvtStringToOrientation, NULL, 0);
-    XtGetApplicationResources(main_window.shell, (XtPointer)&sced_resources,
-                              resources, XtNumber(resources), (Arg*)NULL, 0);
+    XtAppAddConverter(app_context, XtRString, XtROrientation, XmuCvtStringToOrientation, NULL, 0);
+    XtGetApplicationResources(main_window.shell, (XtPointer)&sced_resources, resources, XtNumber(resources), (Arg*)NULL, 0);
 
     /* Global initialization routine. */
     Initialize_Sced(argc, argv, envp);
@@ -337,8 +335,7 @@ main(int argc, char *argv[], char *envp[])
 
     /* Add error handler. */
     XSetErrorHandler(Sced_X_Error_Handler);
-    XtAugmentTranslations(main_window.shell,
-                          XtParseTranslationTable(top_level_translations));
+    XtAugmentTranslations(main_window.shell, XtParseTranslationTable(top_level_translations));
 
     /* Create the contents. */
     Create_Main_Display();
@@ -359,15 +356,12 @@ main(int argc, char *argv[], char *envp[])
     if ( io_file_name )
     {
         /* Try to open the file in the current directory. */
-        if ((infile = Open_Load_File_Name(&io_file_name)) == NULL &&
-            sced_preferences.scene_path)
+        if ((infile = Open_Load_File_Name(&io_file_name)) == NULL && sced_preferences.scene_path)
         {
             /* Couldn't open it. Try opening in the scenes directory. */
-            char    *new_filename = New(char, strlen(io_file_name) +
-                                    strlen(sced_preferences.scene_path) + 4);
+            char    *new_filename = New(char, strlen(io_file_name) + strlen(sced_preferences.scene_path) + 4);
 
-            sprintf(new_filename, "%s/%s",
-                    sced_preferences.scene_path, io_file_name);
+            sprintf(new_filename, "%s/%s", sced_preferences.scene_path, io_file_name);
             if ( ( infile = Open_Load_File_Name(&new_filename) ) == NULL )
                 fprintf(stderr, "Unable to open file %s\n", io_file_name);
             else

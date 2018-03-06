@@ -633,9 +633,7 @@ Edit_Create_Edit_Shell()
     XtSetArg(args[n], XtNtitleMenuName, "originMenu");  n++;
     XtSetArg(args[n], XtNnewLabel, "Add");              n++;
     XtSetArg(args[n], XtNnewMenuName, "AddMenu");       n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);      n++;
-#endif
     if ( count >= limit )
     {
         XtSetArg(args[n], vertical, all_boxes[count - limit]);  n++;
@@ -664,9 +662,7 @@ Edit_Create_Edit_Shell()
     XtSetArg(args[n], XtNtitleMenuName, "newMajor");    n++;
     XtSetArg(args[n], XtNnewLabel, "Add");              n++;
     XtSetArg(args[n], XtNnewMenuName, "AxisAddMenu");   n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);      n++;
-#endif
     if ( count >= limit )
     {
         XtSetArg(args[n], vertical, all_boxes[count - limit]);  n++;
@@ -695,9 +691,7 @@ Edit_Create_Edit_Shell()
     XtSetArg(args[n], XtNtitleMenuName, "newMinor");    n++;
     XtSetArg(args[n], XtNnewLabel, "Add");              n++;
     XtSetArg(args[n], XtNnewMenuName, "AxisAddMenu");   n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);      n++;
-#endif
     if ( count >= limit )
     {
         XtSetArg(args[n], vertical, all_boxes[count - limit]);  n++;
@@ -726,9 +720,7 @@ Edit_Create_Edit_Shell()
     XtSetArg(args[n], XtNtitleMenuName, "scaleMenu");   n++;
     XtSetArg(args[n], XtNnewLabel, "Add");              n++;
     XtSetArg(args[n], XtNnewMenuName, "AddMenu");       n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);      n++;
-#endif
     if ( count >= limit )
     {
         XtSetArg(args[n], vertical, all_boxes[count - limit]);  n++;
@@ -757,9 +749,7 @@ Edit_Create_Edit_Shell()
     XtSetArg(args[n], XtNtitleMenuName, "radiusMenu");  n++;
     XtSetArg(args[n], XtNnewLabel, "Add");              n++;
     XtSetArg(args[n], XtNnewMenuName, "AddMenu");       n++;
-#if ( XtSpecificationRelease > 4 )
     XtSetArg(args[n], XtNleftBitmap, menu_bitmap);      n++;
-#endif
     if ( count >= limit )
     {
         XtSetArg(args[n], vertical, all_boxes[count - limit]);  n++;
@@ -789,9 +779,7 @@ Edit_Create_Edit_Shell()
         XtSetArg(args[n], XtNtitleLabel, title_str);    n++;
         XtSetArg(args[n], XtNnewLabel, "Add");          n++;
         XtSetArg(args[n], XtNnewMenuName, "AddMenu");   n++;
-#if ( XtSpecificationRelease > 4 )
         XtSetArg(args[n], XtNleftBitmap, menu_bitmap);  n++;
-#endif
         if ( count >= limit )
         {
             XtSetArg(args[n], vertical, all_boxes[count - limit]);  n++;

@@ -321,9 +321,9 @@ Export_Light(FILE *outfile, ObjectInstancePtr light, TransformPtr add_trans)
     switch ( light->o_parent->b_class )
     {
         case dirlight_obj:
-            fprintf(stderr,
-                    "Sced: Directional light not supported by Radiance\n");
+            fprintf(stderr, "Sced: Directional light not supported by Radiance\n");
             fprintf(stderr, "Sced: Exporting as point source instead.\n");
+            break;
         case light_obj:
             fprintf(outfile, "void light %s_mat\n0\n0\n", light->o_label);
             fprintf(outfile, "3 %1.5g %1.5g %1.5g\n",
@@ -331,18 +331,17 @@ Export_Light(FILE *outfile, ObjectInstancePtr light, TransformPtr add_trans)
                     light->o_attribs->intensity.green,
                     light->o_attribs->intensity.blue);
 
-            fprintf(outfile, "%s_mat sphere %s\n0\n0\n4 ", light->o_label,
-                    light->o_label);
-	    Transform_Vector(*add_trans, light->o_transform.displacement,vect1);
+            fprintf(outfile, "%s_mat sphere %s\n0\n0\n4 ", light->o_label, light->o_label);
+            Transform_Vector(*add_trans, light->o_transform.displacement,vect1);
             RadVPrint(vect1);
             fprintf(outfile, " 0.2\n");
 
             break;
 
         case spotlight_obj:
-	    Transform_Vector(*add_trans, light->o_world_verts[0], v0);
-	    Transform_Vector(*add_trans, light->o_world_verts[8], v8);
-	    Transform_Vector(*add_trans, light->o_world_verts[9], v9);
+			Transform_Vector(*add_trans, light->o_world_verts[0], v0);
+			Transform_Vector(*add_trans, light->o_world_verts[8], v8);
+			Transform_Vector(*add_trans, light->o_world_verts[9], v9);
 
             /* Calculate the radius. */
             VSub(v0, v9, vect1);
@@ -390,7 +389,7 @@ Export_Light(FILE *outfile, ObjectInstancePtr light, TransformPtr add_trans)
             for ( i = 0 ; i < 4 ; i++ )
             {
                 fprintf(outfile, "\t");
-		Transform_Vector(*add_trans, light->o_world_verts[i], vect1);
+                Transform_Vector(*add_trans, light->o_world_verts[i], vect1);
                 RadVPrint(vect1);
                 fprintf(outfile, "\n");
             }

@@ -183,7 +183,7 @@ Create_Main_Display()
 
     /* Add the Apply button. */
     n = 0;
-    XtSetArg(args[n], XtNlabel, "Apply");                           n++;
+    XtSetArg(args[n], XtNlabel, "ApplyMe");                           n++;
     XtSetArg(args[n], XtNwidth, apply_width);                       n++;
     XtSetArg(args[n], XtNfromVert, main_view_viewport);             n++;
     XtSetArg(args[n], XtNleft, XtChainLeft);                        n++;
@@ -723,8 +723,7 @@ Main_View_Initialize()
     Camera_Create_Object();
 
     /* Install translations. */
-    XtOverrideTranslations(main_window.view_widget,
-        XtParseTranslationTable(selection_string));
+    XtOverrideTranslations(main_window.view_widget, XtParseTranslationTable(selection_string));
 
 }
 

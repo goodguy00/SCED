@@ -148,7 +148,7 @@ View_Update(WindowInfoPtr window, InstanceList instances, int flags)
     XtVaGetValues(window->view_widget, XtNwidth, &new_width,
                 XtNheight, &new_height, NULL);
 
-    if ( flags & NewSize || ! window->off_screen )
+    if ( (flags & NewSize) || ! window->off_screen )
     {
         /* Clean up the old stuff. */
         if ( window->off_screen )

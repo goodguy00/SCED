@@ -252,7 +252,7 @@ Select_Highlight_Action(Widget w, XEvent *e, String *s, Cardinal *n)
     XPoint      pt;
     XRectangle  rect;
 
-    if ( e->xmotion.state & ( Button2Mask | Button3Mask ) || ! highlight_inst )
+    if (( e->xmotion.state & ( Button2Mask | Button3Mask )) || ! highlight_inst )
         return;
 
     if ( e->xmotion.state & Button1Mask )
@@ -626,7 +626,7 @@ Draw_Selection_Points(Drawable draw)
     
     for ( temp_l = select_instances ; temp_l ; temp_l = temp_l->next )
         if ( Obj_Is_Bezier(temp_l->the_instance) &&
-             temp_l->the_instance->o_flags & ObjVisible )
+             (temp_l->the_instance->o_flags & ObjVisible) )
             Draw_Control_Verts(XtDisplay(select_window->shell), draw,
                                control_gc,
                                temp_l->the_instance->o_main_verts +

@@ -94,7 +94,7 @@ extern void Create_Main_Display();
 extern void Main_Button_Down_Action(Widget, XEvent*, String*, Cardinal*);
 extern void Main_Motion_Action(Widget, XEvent*, String*, Cardinal*);
 extern void Main_Button_Up_Action(Widget, XEvent*, String*, Cardinal*);
-extern void Main_Double_Click_Action(Widget, XEvent*, String*, Cardinal*);
+extern void Main_Double_Click_Action(Widget, XEvent*, String*, Cardinal*); // @suppress("Unused function declaration")
 
 extern Widget   edit_shell;
 
